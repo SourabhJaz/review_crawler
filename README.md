@@ -13,11 +13,9 @@
 
 ###Example
 
--
-```
-curl -i http://localhost:5000/api/books?name="habbit+of+winning"
-```
--
+**Request** *curl -i http://localhost:5000/api/books?name="work+week"*
+
+**Response**
 ```
 HTTP/1.0 200 OK
 Content-Type: application/json
@@ -26,7 +24,12 @@ Server: Werkzeug/0.14.1 Python/2.7.15
 Date: Wed, 05 Dec 2018 17:52:34 GMT
 
 {
-  "name": "habbit of winning", 
-  "rating": 4.17
+  "names": [
+    "Four Day Work Week"
+  ], 
+  "ratings": [
+    3.84
+  ]
 }
+
 ```
