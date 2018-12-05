@@ -22,4 +22,6 @@ class BookParser(Parser):
                 count += 1
             except Exception:
                 print("Couldn't find rating for the book")
+                avg_rating = None
             print("Rating: {}".format(avg_rating))
+            return avg_rating

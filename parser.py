@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-from selenium import webdriver
 
 class Parser():
     pages = []; entity_name = None; urls = []
