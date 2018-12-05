@@ -9,9 +9,10 @@ def get_book_rating():
     print(book_name)
     book_parser = BookParser(book_name)
     book_parser.parse_pages()
-    rating = book_parser.get_ratings()
-    if rating:
-        return jsonify({'name': book_name, 'rating': rating})
+    result_names = book_parser.get_result_names()
+    ratings = book_parser.get_ratings()
+    if ratings:
+        return jsonify({'names': result_names, 'ratings': ratings})
     else:
         abort(404)
 

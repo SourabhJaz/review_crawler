@@ -31,3 +31,6 @@ class Parser():
 
     def get_ratings(self):
         return []
+
+    def get_result_names(self):
+        return []

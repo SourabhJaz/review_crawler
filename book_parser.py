@@ -11,17 +11,28 @@ class BookParser(Parser):
         self.entity_name = entity_name
         
     def get_ratings(self):
-        rating = 0; count = 1; avg_rating = 0
+        ratings = []
         for page in self.pages:
             try:
                 ratingSpan = self.get_element(page, 'span', 'minirating')
                 spanText = ratingSpan.text.strip()
                 ratingText = spanText.split(" ")
-                rating += float(ratingText[0])
-                avg_rating = (rating)/(count)
-                count += 1
+                rating = float(ratingText[0])
+                ratings.append(rating)
             except Exception:
                 print("Couldn't find rating for the book")
-                avg_rating = None
-            print("Rating: {}".format(avg_rating))
-            return avg_rating
+                ratings = []
+            print("Ratings: {}".format(ratings))
+            return ratings
+
+    def get_result_names(self):
+        names = []
+        for page in self.pages:
+            try:
+                nameSpan = self.get_element(page, 'a', 'bookTitle')
+                spanText = nameSpan.text.strip()
+                names.append(spanText)
+            except Exception:
+                print("Couldn't find the book")
+            print("Names: {}".format(names))
+            return names
