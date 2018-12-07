@@ -1,17 +1,22 @@
-#Review Crawler
+# Review Crawler
 
-##Installation
+## Installation
 
-- pip install -r requirements.txt
+### Dependencies
+pip install -r requirements.txt
 
-##Usage
+### Redis setup for MAC OS
+brew install redis
 
-###Book reviews
-- **Run** python main.py
+## Usage
 
-- **Url** http://localhost:5000/api/books?name="book_name"
+### Start redis server
+redis-server
 
-###Example
+### Start review crawler
+python main.py
+
+## Example
 
 **Request** *curl -i http://localhost:5000/api/books?name="work+week"*
 
