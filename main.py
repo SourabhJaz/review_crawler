@@ -16,6 +16,8 @@ redisServer = redis.Redis(host=redis_host, port=redis_port, password=redis_passw
 @app.route('/api/books', methods=['GET'])
 def get_book_rating():
     book_name = request.args.get('name')
+    if len(book_name) > 200:
+        abort(404)
     if redisServer.exists(book_name):
         redis_search = redisServer.get(book_name)
         print(redis_search)
