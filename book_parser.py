@@ -22,7 +22,7 @@ class BookParser(Parser):
             except Exception:
                 print("Couldn't find rating for the book")
                 ratings = []
-            print("Ratings: {}".format(ratings))
+#            print("Ratings: {}".format(ratings))
             return ratings
 
     def get_result_names(self):
@@ -34,5 +34,5 @@ class BookParser(Parser):
                 names.append(spanText)
             except Exception:
                 print("Couldn't find the book")
-            print("Names: {}".format(names))
+#            print("Names: {}".format(names))
             return names
